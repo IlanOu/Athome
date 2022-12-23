@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleResponsive.css">
+    <title>Athome</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="newMovie">
+        
+        </div>
+    
+        <div class="newCategory">
+            
+        </div>
+    
+        <div class="hide" id="rmenu">
+            <ul>
+    
+                <li>
+                    <a onclick="modifyMovie(event)">Modifier</a>
+                </li>
+                <li>
+                    <a onclick="deleteMovie(event, null)" class="importantText">Supprimer</a>
+                </li>
+          
+            </ul>
+        </div>
+    
+    
+        <div class="docPage">
+            <div class="topBar">
+    
+                <!-- <h1>Netflop</h1> -->
+                <img src="./Athome logo.png" width="75px">
+    
+                <div class="NewMovieClear">
+                    <input class="button" type="button" value="Ajouter un film" id="buttonNewMovie">
+                    <select class="button" onchange="categoryManager(event)" type="button" value="Catégories" id="buttonNewCategory">
+                        <option selected disabled hidden value="noSelection" id="categoryNoSel">Catégories</option>
+                        <option value="Create">Créer une catégorie</option>
+                        <option value="Edit">Modifier une catégorie</option>
+                        <option value="Delete">Supprimer une catégorie</option>
+                    </select>
+    
+                    <!-- <input class="button" type="button" value="Supprimer les cookies" id="buttonClearCookies"> -->
+                </div>
+    
+    
+            </div>
+    
+            <div class="contentMid">
+                <div class="bigTitleCenter">
+                    <img src="./Athome logo.png" width="250px">
+                    Athome
+                </div>
+    
+                <div class="bigMoviesPart">
+                    <div class="showMovie">
+                    </div>
+    
+                    <h3 class="titleSeparation">Collection</h3>
+                    <div class="separation">
+    
+                    </div>
+                    <div class="moviesPart">
+                        <div class="navBar">
+    
+                            <div class="sort">
+                                <select name="sort" id="sortSelect" class="button" onchange="sortManager(event)">
+                                    <option value="byName">Trier par nom</option>
+                                    <option value="byAuthor">Trier par auteur</option>
+                                    <option value="byLikes">Trier par like</option>
+                                </select>
+                                <input class="button" type="button" value=" - " id="buttonSort">
+                                <input class="button" type="button" value="Effacer" id="buttonClearSort">
+    
+                            </div>
+    
+                            <div class="pageNumber">
+                                <h4>Page 1</h4>
+                            </div>
+    
+                            <div class="SortSearch">
+                                <input type="text" class="input" id="searchInput" placeholder="Rechercher" title="Type in a name">
+                                <div class="resultNumber">
+                                    résultats
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="dadGrid">
+                            <div id="grid">
+    
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div class="pageChoose"></div>
+                        </div>
+    
+    
+                    </div>
+                    <h3 class="titleSeparation">Les films que vous aimez</h3>
+                    <div class="separation">
+                    </div>
+    
+                    <div class="dadGrid">
+                        <div class="gridLikedMovies">
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+    
+            <div class="arrowBotScroll">
+                <div class="arrowBottom" onclick="scrollDown()">
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+
+    <script src="Films/datas.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
