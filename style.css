@@ -463,7 +463,8 @@ input ~ .button{
     justify-items: center;
 
 
-    width: fit-content;
+/*     width: fit-content; */
+    width: 100%;
 
     align-self: baseline;
 }
